@@ -1,6 +1,14 @@
-// Countdown target: 10 days from now
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 10);
+// Use localStorage to persist the countdown target date
+let targetDate;
+const storedDate = localStorage.getItem('countdownTargetDate');
+
+if (storedDate) {
+  targetDate = new Date(storedDate);
+} else {
+  targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 10);
+  localStorage.setItem('countdownTargetDate', targetDate.toISOString());
+}
 
 function updateCountdown() {
   const now = new Date().getTime();
