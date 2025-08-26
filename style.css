@@ -24,19 +24,22 @@ body {
 
 .container {
   text-align: center;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 h1 {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
+  letter-spacing: -0.1rem;
 }
 
 p {
   font-size: 1.1rem;
   color: #555;
   margin-bottom: 2rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.04rem;
 }
 
 .countdown {
@@ -75,8 +78,9 @@ p {
   font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
+  background: #000;
   border: none;
+  letter-spacing: -0.04rem;
   border-radius: 30px;
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(79, 70, 229, 0.15);
@@ -85,7 +89,7 @@ p {
 }
 
 .cta-btn:hover {
-  background: linear-gradient(90deg, #06b6d4 0%, #4f46e5 100%);
+  background: #353535;
   transform: translateY(-2px) scale(1.04);
 }
 
