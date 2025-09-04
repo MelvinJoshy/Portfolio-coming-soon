@@ -93,6 +93,93 @@ p {
   transform: translateY(-2px) scale(1.04);
 }
 
+/* =================
+   Social Icons
+   ================= */
+.social-icons {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.social-icons a {
+  color: #333; /* A dark, neutral color */
+  font-size: 1.75rem; /* A slightly larger icon size */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px); /* A subtle "lift" effect on hover */
+}
+
+/* Brand color on hover */
+.social-icons a[aria-label="Behance Profile"]:hover {
+  color: #053eff; /* Behance Blue */
+}
+
+.social-icons a[aria-label="Instagram Profile"]:hover {
+  color: #E4405F; /* Instagram Pink */
+}
+
+.social-icons a[aria-label="Email"]:hover {
+  color: #555; /* A slightly different shade for the email icon */
+}
+
+/* =================
+   Tooltip Styles
+   ================= */
+.social-icons a {
+  position: relative; /* This is crucial for positioning the tooltip */
+}
+
+.social-icons a::before,
+.social-icons a::after {
+  /* Base styles for tooltip and its arrow */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Prevents the tooltip from interfering with mouse events */
+}
+
+/* Tooltip text box */
+.social-icons a::before {
+  content: attr(data-tooltip); /* Gets the text from our data-tooltip attribute */
+  top: 160%; /* Position below the icon */
+  background-color: #333;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap; /* Ensures the text stays on one line */
+}
+
+/* Tooltip arrow */
+.social-icons a::after {
+  content: '';
+  top: 160%;
+  margin-top: -5px; /* Position it just above the tooltip box */
+  border-style: solid;
+  border-width: 0 5px 5px 5px; /* Creates the triangle shape pointing up */
+  border-color: transparent transparent #333 transparent;
+}
+
+/* Show the tooltip on hover */
+.social-icons a:hover::before,
+.social-icons a:hover::after {
+  opacity: 1;
+  visibility: visible;
+  /* Animate the tooltip moving up slightly */
+  transform: translateX(-50%) translateY(3px);
+}
+
+
+
 @media (max-width: 500px) {
   h1 {
     font-size: 2rem;
